@@ -21,6 +21,7 @@ const Zip=(props)=>{
 
     return(
         <div>
+            
             <h1> Zip Code: {props.zip}</h1>
             <h2>CountryCode: {cityListState.country_code}</h2>
             <h2>lat: {cityListState.lat}</h2>
