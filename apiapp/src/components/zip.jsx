@@ -17,13 +17,25 @@ const Zip=(props)=>{
         fetchLocality();
     }, []);
     console.log(cityListState);
+   
 
     return(
         <div>
-            {cityListState.map((item)=>{
-                return <p>{item.postalcode}</p> ;
-                })};
+            <h1> Zip Code: {props.zip}</h1>
+            <h2>CountryCode: {cityListState.country_code}</h2>
+            <h2>lat: {cityListState.lat}</h2>
+            <h2>lng {cityListState.lng}</h2>
+            <h2>postal_code: {cityListState.postal_code}</h2>
+            <h2>state: {cityListState.state}</h2>
+               
         </div>
+
+
+        // <div>
+        //     { Array.toArray(cityListState).map((item)=>{
+        //        return <p>{item.postal_code}</p> ;
+        //         })};
+        // </div>
     );
 }
 
