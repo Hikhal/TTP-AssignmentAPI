@@ -9,19 +9,20 @@ const Zip=(props)=>{
     
     useEffect ( () => {
         async function fetchLocality() {
-        const list = await axios.get ("https://zip-api.eu/api/v1/info/US-"+props.zip);
-        console.log(props.zip)
-        setCityListState (list.data) ;
-        // this.setState(list.data.results)
+            try{
+                const list = await axios.get ("https://zip-api.eu/api/v1/info/US-"+props.zip);
+                console.log(props.zip)
+                setCityListState (list.data) ;
+            }catch(error){
+                console.error("Error getting data:" + error)
+            }
         }
         fetchLocality();
-    }, []);
+    }, [props.zip]);
     console.log(cityListState);
    
-
     return(
         <div>
-            
             <h1> Zip Code: {props.zip}</h1>
             <h2>CountryCode: {cityListState.country_code}</h2>
             <h2>lat: {cityListState.lat}</h2>

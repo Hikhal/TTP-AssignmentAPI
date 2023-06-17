@@ -5,8 +5,7 @@ import React, {useState} from "react";
 
 
 function App() {
-  const [zipcode, setZipcode] = useState([]) ;
-
+  const [zipcode, setZipcode] = useState("11230") ; //since we're passing zipcode as a string the return type of useState is expected to be of type string
   function updateZipcode(event){
     setZipcode(event.target.value);
 
@@ -16,7 +15,7 @@ function App() {
   return (
     <div >
       <Zip zip={zipcode}/>
-      <input type='updateZipcode()'></input>
+      <input  type = "text" value = {zipcode} onChange = {updateZipcode}></input>
 
     </div>
   );
