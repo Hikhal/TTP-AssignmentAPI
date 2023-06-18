@@ -29,14 +29,15 @@ const Zip=(props)=>{
     
      // The render method, which returns what the component should render to the DOM.
     return(
-        <div>
-            <h1> Zip Code: {props.zip}</h1>
-            <h2>CountryCode: {cityListState.country_code}</h2>
-            <h2>lat: {cityListState.lat}</h2>
-            <h2>lng {cityListState.lng}</h2>
-            <h2>postal_code: {cityListState.postal_code}</h2>
-            <h2>state: {cityListState.state}</h2>
-               
+        <div className="zipcodeInfo">
+            <div>
+                <h1> Zip Code: {props.zip}</h1>
+                <p>CountryCode: {cityListState.country_code}</p>
+                <p>lat: {cityListState.lat}</p>
+                <p>lng {cityListState.lng}</p>
+                <p>postal_code: {cityListState.postal_code}</p>
+                <p>state: {cityListState.state}</p>
+            </div>
         </div>
 
     );

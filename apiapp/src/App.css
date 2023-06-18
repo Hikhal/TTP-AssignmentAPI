@@ -1,0 +1,46 @@
+.zipcodeInfo{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .zipcodeInfo div{
+    padding:20px;
+    border: 6px solid black;
+  }
+  /* .zipInfo{
+    display: flex;
+    flex-direction: column;
+    padding:20px;
+    border: 6px solid black;
+    align-self: center;
+  } */
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .form input[type="text"]::placeholder {
+    color: #999;
+  }
+  
+  .form input[type="text"]:focus {
+    outline: none;
+    border-color: #5c9eff;
+    box-shadow: 0 0 4px #5c9eff;
+  }
+  
+  .form input[type="text"]:hover {
+    border-color: #999;
+  }
+  
+  
