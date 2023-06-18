@@ -2,10 +2,14 @@ import React, {useEffect,useState} from "react";
 import axios from "axios"
 
 const Zip=(props)=>{
-
+    
+    // cityListState will hold the information about the zip code received from the API.
+    // setCityListState is the function that we'll use to set this state.
+    
     const [cityListState, setCityListState] = useState([]) ;
-    // pokeList === this.state.pokeList
-    // setPokeList === this. setState.pokeList
+    
+     // useEffect hook to perform side effects in our functional component.
+     // Here, the side effect is the HTTP request to the API.
     
     useEffect ( () => {
         async function fetchLocality() {
@@ -13,14 +17,17 @@ const Zip=(props)=>{
                 const list = await axios.get ("https://zip-api.eu/api/v1/info/US-"+props.zip);
                 console.log(props.zip)
                 setCityListState (list.data) ;
+                 // Error handling in case the API request fails.
             }catch(error){
                 console.error("Error getting data:" + error)
             }
         }
         fetchLocality();
+        // The dependency array. Our effect will run again if the value of props.zip changes.
     }, [props.zip]);
     console.log(cityListState);
-   
+    
+     // The render method, which returns what the component should render to the DOM.
     return(
         <div>
             <h1> Zip Code: {props.zip}</h1>
@@ -32,12 +39,6 @@ const Zip=(props)=>{
                
         </div>
 
-
-        // <div>
-        //     { Array.toArray(cityListState).map((item)=>{
-        //        return <p>{item.postal_code}</p> ;
-        //         })};
-        // </div>
     );
 }
 
